@@ -1,0 +1,33 @@
+/* folders */
+
+:root { --indent: 14px; }
+
+.v-Sources-list .app-source--depth1 { padding-left: calc((1 * var(--indent)) + 12px); }
+.v-Sources-list .app-source--depth2 { padding-left: calc((2 * var(--indent)) + 12px); }
+.v-Sources-list .app-source--depth3 { padding-left: calc((3 * var(--indent)) + 12px); }
+.v-Sources-list .app-source--depth4 { padding-left: calc((4 * var(--indent)) + 12px); }
+.v-Sources-list .app-source--depth5 { padding-left: calc((5 * var(--indent)) + 12px); }
+.v-Sources-list .app-source--depth6 { padding-left: calc((6 * var(--indent)) + 12px); }
+.v-Sources-list .app-source--depth7 { padding-left: calc((7 * var(--indent)) + 12px); }
+.v-Sources-list .app-source--depth8 { padding-left: calc((8 * var(--indent)) + 12px); }
+.v-Sources-list .app-source--depth9 { padding-left: calc((9 * var(--indent)) + 12px); }
+.v-Sources-list .app-source--depth10 { padding-left: calc((10 * var(--indent)) + 12px); }
+.v-Sources-list .app-source--depth11 { padding-left: calc((11 * var(--indent)) + 12px); }
+.v-Sources-list .app-source--depth12 { padding-left: calc((12 * var(--indent)) + 12px); }
+.v-Sources-list .app-source--depth13 { padding-left: calc((13 * var(--indent)) + 12px); }
+.v-Sources-list .app-source--depth14 { padding-left: calc((14 * var(--indent)) + 12px); }
+.v-Sources-list .app-source--depth15 { padding-left: calc((15 * var(--indent)) + 12px); }
+.v-Sources-list .app-source>.v-Icon {
+  margin-right: 4px;
+}
+
+/* fix editor blockquotes */
+
+.v-Message-body blockquote,
+.v-RichText blockquote {
+  margin-left: 40px !important;
+  padding: 0.6em 0 !important;
+  border: none !important;
+  background: none !important;
+  color: unset !important;
+}
