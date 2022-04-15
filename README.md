@@ -74,7 +74,7 @@ You will need to reload any loaded FastMail webmail client pages after installat
 
 ### From the web store
 
-Visit the [Chrome Web Store](https://chrome.google.com/webstore/category/extensions) and search for [Better FastMail](https://chrome.google.com/webstore/search/better%20fastmail), then click the "Add to Chrome" button.
+Visit the [Better FastMail](https://chrome.google.com/webstore/detail/better-fastmail/djjbcjbeiifedilgkohllahmnjlmcnmh) page on the [Chrome Web Store](https://chrome.google.com/webstore/category/extensions) then click the "Add to Chrome" button.
 
 ### From a local folder
 

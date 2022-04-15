@@ -25,12 +25,19 @@ const Storage = {
 
 const isInput = (event) => /INPUT|TEXTAREA/i.test(event.target.tagName)
 
-function getElementByTextContent (parent, selector, text) {
+const $ = document.querySelector.bind(document)
+
+const $$ = document.querySelectorAll.bind(document)
+
+function $t (parent, text, selector = undefined) {
   if (typeof parent === 'string') {
-    parent = document.querySelector(parent)
+    parent = $(parent)
   }
   if (parent) {
-    return Array.from(parent.querySelectorAll(selector)).find(e => e.innerText === text)
+    const elements = selector
+      ? parent.querySelectorAll(selector)
+      : parent.childNodes
+    return Array.from(elements).find(e => e.innerText === text)
   }
 }
 
@@ -100,7 +107,7 @@ function handleShortcut (combo, filter = null) {
 }
 
 function handleListShortcut (combo) {
-  const filter = () => document.querySelector('#mail .v-Mailbox, #contacts .u-list-body')
+  const filter = () => $('#mail .v-Mailbox, #contacts .u-list-body')
   return handleShortcut(combo, filter)
 }
 
@@ -109,17 +116,17 @@ function handleListShortcut (combo) {
 // ---------------------------------------------------------------------------------------------------------------------
 
 function getDeselectItemsCheckbox () {
-  return document.querySelector('.v-SelectAllCheckbox.is-checked')
+  return $('.v-SelectAllCheckbox.is-checked')
 }
 
 function getSelectedItem () {
-  const focus = document.querySelector('div[class="v-ListKBFocus"]')
+  const focus = $('div[class="v-ListKBFocus"]')
   if (focus) {
     const top = focus.style.marginTop
-    return document.querySelector(`.u-list-item[style*="top:${top}"]`)
+    return $(`.u-list-item[style*="top:${top}"]`)
   }
   else {
-    return document.querySelector('.v-MailboxItem.is-focused, .v-ContactItem.is-focused')
+    return $('.v-MailboxItem.is-focused, .v-ContactItem.is-focused')
   }
 }
 
@@ -221,7 +228,7 @@ document.addEventListener('keyup', handleSelectionSequenceState)
 
 function handleShowFolder (dir) {
   return function (event) {
-    const src = document.querySelector('.app-source.is-selected')
+    const src = $('.app-source.is-selected')
     if (src) {
       const parent = src.parentElement
       const trg = dir < 0
@@ -237,7 +244,7 @@ function handleShowFolder (dir) {
 
 function handleToggleFolder (dir) {
   return function (event) {
-    const src = document.querySelector('.app-source.is-selected')
+    const src = $('.app-source.is-selected')
     if (src) {
       const parent = src.parentElement
       const isExpanded = parent.classList.contains('is-expanded')
@@ -315,7 +322,7 @@ document.addEventListener('keydown', function (event) {
       else {
         const toolbar = target.closest('.v-RichText').querySelector('.v-Toolbar')
         const text = indent ? 'Quote' : 'Unquote'
-        const button = getElementByTextContent(toolbar, 'button', text)
+        const button = $t(toolbar, text)
         if (button) {
           button.click()
         }
@@ -381,7 +388,10 @@ function handleAddUser (event) {
   }
 }
 
-function setupUsers () {
+function setupUsers (node) {
+  // global
+  $menu = node
+
   // move help to end
   $menu.appendChild($menu.querySelector('li:nth-child(1)'))
 
@@ -404,8 +414,7 @@ const observer = new MutationObserver(function (mutationsList, observer) {
           const menu = node.querySelector('ul.v-MainMenu-admin')
           if (menu) {
             observer.disconnect()
-            $menu = menu
-            setupUsers()
+            setupUsers(menu)
           }
         }
       }
