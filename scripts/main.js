@@ -111,6 +111,17 @@ function handleListShortcut (combo) {
   return handleShortcut(combo, filter)
 }
 
+function handleListDelete (event) {
+  if($('#mail .v-Mailbox')) {
+    event.preventDefault()
+    return fireShortcut('D')
+  }
+  else if ($('#contacts .u-list-body')) {
+    event.preventDefault()
+    return fireShortcut('#')
+  }
+}
+
 // ---------------------------------------------------------------------------------------------------------------------
 // selection
 // ---------------------------------------------------------------------------------------------------------------------
@@ -267,7 +278,7 @@ const handlers = {
   // mail / contact navigation
   ArrowUp: handleListShortcut('K'),
   ArrowDown: handleListShortcut('J'),
-  Backspace: handleListShortcut('D'),
+  Backspace: handleListDelete,
 
   // mail archive
   ModArrowUp: handleListShortcut(']'),
