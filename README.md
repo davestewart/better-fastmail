@@ -85,3 +85,38 @@ Download and unzip, or clone the repository to a folder you won't move, then:
 3. Click the "Load unpacked" button
 4. Navigate to the folder you just unzipped (which contains the `manifest.json` file)
 5. Click the "Select" button in the dialog
+
+---
+
+## Don't forget...
+
+FastMail has some pretty useful shortcuts of its own! Here are some I like:
+
+Global navigation
+
+- `Shift`+`G` then `M`        - Go to mail
+- `Shift`+`G` then `A`        - Go to contacts
+- `Shift`+`G` then `C`        - Go to calendar
+
+UI
+
+- `Cmd`+`Cmd`                 - Show keyboard shortcuts for UI
+- `Shift`+`Cmd`+`I`           - Toggle sidebar
+
+Mail
+
+- `/`                         - Focus mail search box
+- `G`                         - Go to folder
+
+Messages
+
+- `C`                         - Compose
+- `M`                         - Move selected items to folder
+- `L`                         - Label selected items
+
+Conversations
+
+- `Shift`+`E`                 - Expand all conversation items
+- `"`                         - Toggle inline replies for selected message
+
+Lots more on the FastMail [Keyboard Shortcuts](https://www.fastmail.help/hc/en-us/articles/360058753534-Keyboard-shortcuts) page.
