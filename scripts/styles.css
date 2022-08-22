@@ -2,29 +2,29 @@
 
 :root { --indent: 14px; }
 
-body.better-fastmail .v-Sources-list .app-source--depth1 { padding-left: calc((1 * var(--indent)) + 12px); }
-body.better-fastmail .v-Sources-list .app-source--depth2 { padding-left: calc((2 * var(--indent)) + 12px); }
-body.better-fastmail .v-Sources-list .app-source--depth3 { padding-left: calc((3 * var(--indent)) + 12px); }
-body.better-fastmail .v-Sources-list .app-source--depth4 { padding-left: calc((4 * var(--indent)) + 12px); }
-body.better-fastmail .v-Sources-list .app-source--depth5 { padding-left: calc((5 * var(--indent)) + 12px); }
-body.better-fastmail .v-Sources-list .app-source--depth6 { padding-left: calc((6 * var(--indent)) + 12px); }
-body.better-fastmail .v-Sources-list .app-source--depth7 { padding-left: calc((7 * var(--indent)) + 12px); }
-body.better-fastmail .v-Sources-list .app-source--depth8 { padding-left: calc((8 * var(--indent)) + 12px); }
-body.better-fastmail .v-Sources-list .app-source--depth9 { padding-left: calc((9 * var(--indent)) + 12px); }
-body.better-fastmail .v-Sources-list .app-source--depth10 { padding-left: calc((10 * var(--indent)) + 12px); }
-body.better-fastmail .v-Sources-list .app-source--depth11 { padding-left: calc((11 * var(--indent)) + 12px); }
-body.better-fastmail .v-Sources-list .app-source--depth12 { padding-left: calc((12 * var(--indent)) + 12px); }
-body.better-fastmail .v-Sources-list .app-source--depth13 { padding-left: calc((13 * var(--indent)) + 12px); }
-body.better-fastmail .v-Sources-list .app-source--depth14 { padding-left: calc((14 * var(--indent)) + 12px); }
-body.better-fastmail .v-Sources-list .app-source--depth15 { padding-left: calc((15 * var(--indent)) + 12px); }
-body.better-fastmail .v-Sources-list .app-source>.v-Icon {
+body[data-bfm] .v-Sources-list .app-source--depth1 { padding-left: calc((1 * var(--indent)) + 12px); }
+body[data-bfm] .v-Sources-list .app-source--depth2 { padding-left: calc((2 * var(--indent)) + 12px); }
+body[data-bfm] .v-Sources-list .app-source--depth3 { padding-left: calc((3 * var(--indent)) + 12px); }
+body[data-bfm] .v-Sources-list .app-source--depth4 { padding-left: calc((4 * var(--indent)) + 12px); }
+body[data-bfm] .v-Sources-list .app-source--depth5 { padding-left: calc((5 * var(--indent)) + 12px); }
+body[data-bfm] .v-Sources-list .app-source--depth6 { padding-left: calc((6 * var(--indent)) + 12px); }
+body[data-bfm] .v-Sources-list .app-source--depth7 { padding-left: calc((7 * var(--indent)) + 12px); }
+body[data-bfm] .v-Sources-list .app-source--depth8 { padding-left: calc((8 * var(--indent)) + 12px); }
+body[data-bfm] .v-Sources-list .app-source--depth9 { padding-left: calc((9 * var(--indent)) + 12px); }
+body[data-bfm] .v-Sources-list .app-source--depth10 { padding-left: calc((10 * var(--indent)) + 12px); }
+body[data-bfm] .v-Sources-list .app-source--depth11 { padding-left: calc((11 * var(--indent)) + 12px); }
+body[data-bfm] .v-Sources-list .app-source--depth12 { padding-left: calc((12 * var(--indent)) + 12px); }
+body[data-bfm] .v-Sources-list .app-source--depth13 { padding-left: calc((13 * var(--indent)) + 12px); }
+body[data-bfm] .v-Sources-list .app-source--depth14 { padding-left: calc((14 * var(--indent)) + 12px); }
+body[data-bfm] .v-Sources-list .app-source--depth15 { padding-left: calc((15 * var(--indent)) + 12px); }
+body[data-bfm] .v-Sources-list .app-source>.v-Icon {
   margin-right: 4px;
 }
 
 /* fix editor blockquotes */
 
-body.better-fastmail .v-Message-body blockquote,
-body.better-fastmail .v-RichText blockquote {
+body[data-bfm] .v-Message-body blockquote,
+body[data-bfm] .v-RichText blockquote {
   margin: 5px 0 5px 40px;
   padding: 0;
   border: none;
@@ -34,26 +34,26 @@ body.better-fastmail .v-RichText blockquote {
 
 /* match formatting for bullets */
 
-body.better-fastmail .u-article li,
-body.better-fastmail .u-article li + ul,
-body.better-fastmail blockquote > div {
+body[data-bfm] .u-article li,
+body[data-bfm] .u-article li + ul,
+body[data-bfm] blockquote > div {
   margin: 5px 0;
 }
 
 /* prevent quote toggling */
 
-body.better-fastmail .u-quote[class="u-quote"] {
+body[data-bfm] .u-quote[class="u-quote"] {
   height: unset;
 }
 
-body.better-fastmail .u-quote-toggle {
+body[data-bfm] .u-quote-toggle {
   display: none;
 }
 
 /* simplified reply indentation */
 
-body.better-fastmail blockquote[id*="defanged"],
-body.better-fastmail blockquote[class*="defanged"] {
+body[data-bfm] blockquote,
+body[data-bfm] blockquote {
   border-left: 3px solid var(--ui-kbfocus-color-fg) !important;
   border-radius: 0 !important;
   margin: 10px 0 10px 0 !important;
