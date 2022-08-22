@@ -354,48 +354,54 @@ function loadUsers () {
   const users = Storage.get('users')
   if (users) {
     users.forEach(user => {
-      addUser(user.email, user.url)
+      addUser(user.id, user.email)
     })
   }
 }
 
-function addUser (email, url) {
+function addUser (id, email) {
+  // variables
+  const url = `https://www.fastmail.com/mail/Inbox/?u=${id}`
+  if ($menu.querySelector(`a[href="${url}"]`)) {
+    return
+  }
+
   // add user
   const $user = $switch.cloneNode(true)
   $user.querySelector('a').setAttribute('href', url)
   $user.innerHTML = $user.innerHTML.replace('Switch user', email)
   $menu.insertBefore($user, $switch.nextSibling)
 
+  // save user
+  users.push({ id, email })
+  saveUsers()
+
   // remove user
   $user.addEventListener('click', event => {
+    event.preventDefault()
     if (isModifier(event)) {
-      if (confirm('Remove user?')) {
-        const index = users.findIndex(user => user.email === email)
-        if (index > -1) {
-          $menu.removeChild($user)
-          users.splice(index, 1)
-          saveUsers()
-        }
+      const index = users.findIndex(user => user.email === email)
+      if (index > -1) {
+        $menu.removeChild($user)
+        users.splice(index, 1)
+        saveUsers()
       }
     }
   })
-
-  // save
-  users.push({ email, url })
-  saveUsers()
 }
 
 function handleAddUser (event) {
   if (isModifier(event)) {
     event.preventDefault()
     event.stopImmediatePropagation()
-    const email = prompt('Enter new user identifier (name or email)')
-    if (email) {
-      const url = prompt('Enter account URL')
-      if (url) {
-        addUser(email, name)
-      }
-    }
+
+    // data
+    const email = $('.v-MainNavToolbar-userName').innerText
+    const id = new URLSearchParams(location.search).get('u')
+    addUser(id, email)
+
+    // save
+
   }
 }
 

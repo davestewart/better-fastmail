@@ -1,9 +1,8 @@
 {
   "name": "Better FastMail",
-  "action": {},
-  "manifest_version": 3,
-  "version": "1.2",
   "description": "UX & UI improvements to the FastMail web client",
+  "version": "1.2",
+  "manifest_version": 3,
   "icons": {
     "16": "assets/icon-16.png",
     "32": "assets/icon-32.png",
@@ -19,6 +18,7 @@
   "background": {
     "service_worker": "scripts/background.js"
   },
+  "action": {},
   "content_scripts": [
     {
       "matches": [

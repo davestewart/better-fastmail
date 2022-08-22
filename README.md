@@ -65,8 +65,8 @@ Editor
 Main menu
 
 - `Mod`+`Click` "Switch Users" - add new user
-- `Click` new user             - switch to user
 - `Mod`+`Click` new user       - delete user
+- `Click` new user             - switch to user
 
 ## Installation
 
@@ -107,6 +107,7 @@ Mail
 
 - `/`                         - Focus mail search box
 - `G`                         - Go to folder
+- `U`                         - Refresh
 
 Messages
 
